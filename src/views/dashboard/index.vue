@@ -368,7 +368,7 @@ import Premium from '@/components/Charts/Premium'
 import { mapState } from 'vuex'
 // import Keyboard from '@/components/Charts/Keyboard.vue'
 import Circles from "@/components/Charts/circle";
-import  {insureUqe} from "@/api/user";
+import  {insureAmt,insureUqe,fromFirmChannelDto} from "@/api/yxhb";
 
 export default {
   // name: 'layout',/
@@ -466,16 +466,71 @@ export default {
     getData(){
        this.initFlag()
        //被保人年龄占比
-     insureUqe({ city_code: 'lanzhou', insuredRelation: 1 }).then((resp) => {
+     insureUqe({ cityCode: 'lanzhou', insuredRelation: 1 }).then((resp) => {
         console.log(resp)
-          // this.pies4.rows = resp.data.map((item) => {
-          //   return {
-          //     用户: item.relation,
-          //     占比: item.insure_uqe,
-          //   };
-          // });
-          // this.pies4AsyncFinish = true;
-        });
+          this.pies4.rows = resp.data.map((item) => {
+            return {
+              用户: item.relation,
+              占比: item.insure_uqe,
+            };
+          });
+          this.pies4AsyncFinish = true;
+        }),
+
+         //渠道保费分布
+     insureAmt({ cityCode:'lanzhou', fromSourceLimit:10}).then((resp) => {
+        console.log(resp)
+        //   this.pies4.rows = resp.data.map((item) => {
+        //     return {
+        //       用户: item.relation,
+        //       占比: item.insure_uqe,
+        //     };
+        //   });
+        //   this.pies4AsyncFinish = true;
+        }),
+  
+
+    // 渠道保人分布
+      fromFirmChannelDto({cityCode:'lanzhou', insuranceFirmChannelPersonCnt:1}).then((resp)=>{
+        console.log(resp)
+      }),
+
+    // 参保人性别
+     insureUqe({ cityCode: 'lanzhou', userSex: 1 }).then((resp) => {
+        console.log(resp)
+          this.pies4.rows = resp.data.map((item) => {
+            return {
+              用户: item.relation,
+              占比: item.insure_uqe,
+            };
+          });
+          this.pies4AsyncFinish = true;
+        }),
+
+    // 参保人医保类型
+     insureUqe({ cityCode: 'lanzhou', medicalType: 1 }).then((resp) => {
+        console.log(resp)
+          this.pies4.rows = resp.data.map((item) => {
+            return {
+              用户: item.relation,
+              占比: item.insure_uqe,
+            };
+          });
+          this.pies4AsyncFinish = true;
+        }),
+ 
+    // 参保人年龄分布
+     insureUqe({ cityCode: 'lanzhou', bigScreenTenIntervalAge: 1 }).then((resp) => {
+        console.log(resp)
+          this.pies4.rows = resp.data.map((item) => {
+            return {
+              用户: item.relation,
+              占比: item.insure_uqe,
+            };
+          });
+          this.pies4AsyncFinish = true;
+        })
+
     },
      
           handleClick(e, i) {
@@ -552,7 +607,7 @@ export default {
           font-weight: 600;
           color: #0064DA;
           line-height: 20px;
-          left: 14.5rem;
+          left: 37%;
         }
          img{
           width: 100%;

@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 折线图 -->
-    <div id='myChart' :style="{ width: '500px', height: '300px' }"/>
+    <div id='myChart' :style="{ width: '100%', height: '200px' }"/>
 
 </div>
  

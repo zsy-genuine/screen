@@ -76,7 +76,7 @@
 <script>
 import { validUsername } from '@/utils/validate'
 import SocialSign from './components/SocialSignin'
-import {insureUqe} from  '@/api/user'
+import {insureUqe} from  '@/api/yxhb'
 
 export default {
   name: 'Login',
@@ -142,7 +142,7 @@ export default {
   },
   methods: {
       getlogin(){
-insureUqe({ city_code: 'lanzhou', insuredRelation: 1 }).then((resp) => {})
+insureUqe({ cityCode: 'lanzhou', bigScreenInsureTypeRate: 1 }).then((resp) => {})
     },
     checkCapslock(e) {
       const { key } = e

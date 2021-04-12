@@ -1,14 +1,54 @@
 // import request from '@/http/index'
 import request from '@/utils/request'
 
-// 投被保人关系分布
-export function insureUqe(params) {
+
+
+// 渠道保费分布
+export function insureAmt(params) {
   return request({
-    url: '/yxhb/cshmb/insureUqe',
+    url: '/yxhb/free/cshmb/insureAmt',
     method: 'get',
     params: params,
   })
 }
+
+// 渠道保人分布
+export function fromFirmChannelDto(params) {
+  return request({
+    url: '/yxhb/free/cshmb/fromFirmChannelDto',
+    method: 'get',
+    params: params,
+  })
+}
+
+// 1、参保人性别    2．参保人医保类型    3.投被保人关系分布   4.参保人年龄分布
+
+export function insureUqe(params) {
+  return request({
+    url: '/yxhb/free/cshmb/insureUqe',
+    method: 'get',
+    params: params,
+  })
+}
+
+
+
+
+// 投被保人关系分布
+// export function insureUqe(params) {
+//   return request({
+//     url: '/yxhb/free/cshmb/insureUqe',
+//     method: 'get',
+//     params: params,
+//   })
+// }
+
+
+
+
+
+
+// export function 
 
 
 // //保单量, 单/多人保情况

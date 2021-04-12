@@ -37,19 +37,15 @@ module.exports = {
       errors: true
     },
     proxy: {
-      '/proxy': {
-        target: 'http://test.yxhb.beijingyuanxin.com',
-        // target: 'https://test.yuanxinbaoxian.com/online-drug-weal',
-       // ws: true,
+      '/yxhb': {
+        target: 'http://api.dev.dc.beijingyuanxin.com',
         changeOrigin: true, // 虚拟的站点需要更管origin
-        pathRewrite: {
-          '^/proxy': ''
-          // '^/dev-api': '',
-          // ['^' + process.env.VUE_APP_BASE_API]: '' // /dev-api 替换为空  https://www.easy-mock.com/mock/5f97da2747e82c655543228e/test-admin/dev-api
-        }
+        // pathRewrite: {
+        //   '^/proxy': ''
+        // }
       }
     },
-    before: require('./mock/mock-server.js')
+    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that

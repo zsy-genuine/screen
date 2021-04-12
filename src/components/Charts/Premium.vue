@@ -39,7 +39,7 @@ export default {
         'macarons'
       )
       this.chartPie.setOption({
-        backgroundColor: '#0F1C39',
+        // backgroundColor: '#0F1C39',
         tooltip: {
           trigger: 'item',
           formatter: '{a} <br/>{b} : {c} ({d}%)'
@@ -96,7 +96,7 @@ export default {
 
 <style scope>
 .pie-wrap {
-  width: 200px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 </style>

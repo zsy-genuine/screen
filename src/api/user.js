@@ -1,12 +1,12 @@
 import request from '@/utils/request'
 
-export function insureUqe(params) {
-  return request({
-    url: '/yxhb/cshmb/insureUqe',
-    method: 'get',
-    params: params,
-  })
-}
+// export function insureUqe(params) {
+//   return request({
+//     url: '/yxhb/free/cshmb/insureUqe',
+//     method: 'get',
+//     params: params,
+//   })
+// }
 
 // export function login(data) {
 //   return request({

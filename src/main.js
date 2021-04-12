@@ -14,12 +14,16 @@ import App from './App'
 import store from './store'
 import router from './router'
 
+
+
 import './icons' // icon
 import './permission' // permission control
 import './utils/error-log' // error log
 
 import * as filters from './filters' // global filters
+import VeRing from 'v-charts/lib/ring.common'// 环形图
 
+Vue.component(VeRing.name, VeRing)
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
